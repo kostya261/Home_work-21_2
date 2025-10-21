@@ -39,7 +39,7 @@ class MyServer(BaseHTTPRequestHandler):
                 self.wfile.write(file.read())
         else:
             # 6. Если файла нет - ошибка 404
-            self.send_error(404, f"File not found: {path}")
+            self.send_error(404, f" ❌ File not found: {path}")
 
     def do_POST(self):
         content_length = int(self.headers['Content-Length'])
@@ -50,10 +50,14 @@ class MyServer(BaseHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    # Инициализация веб-сервера, который будет по заданным параметрах в сети
-    # принимать запросы и отправлять их на обработку специальному классу, который был описан выше
+
+    print("⭐ ⭐ ⭐ Домашняя работа 21.2 ⭐ ⭐ ⭐")
+
+    # Инициализация веб-сервера, который будет по заданным параметрам в сети
+    # принимать запросы и отправлять их на обработку специальному классу,
+    # который был описан выше
     webServer = HTTPServer((hostName, serverPort), MyServer)
-    print("Server started http://%s:%s" % (hostName, serverPort))
+    print("🟢 Server started http://%s:%s" % (hostName, serverPort))
 
     try:
         # Cтарт веб-сервера в бесконечном цикле прослушивания входящих запросов
@@ -64,4 +68,4 @@ if __name__ == "__main__":
 
     # Корректная остановка веб-сервера, чтобы он освободил адрес и порт в сети, которые занимал
     webServer.server_close()
-    print("Server stopped.")
+    print("⚠️ Server stopped.")
