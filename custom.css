@@ -1,0 +1,14 @@
+/* styles */
+.min-vh-80 {
+    min-height: 80vh;
+}
+.dark-btn {
+    background-color: #343a40;
+    border-color: #343a40;
+    color: white;
+}
+.dark-btn:hover {
+    background-color: #23272b;
+    border-color: #23272b;
+    color: white;
+}
